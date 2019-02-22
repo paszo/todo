@@ -4,7 +4,7 @@
     <field name="name">To-do Task Form</field>
     <field name="model">todo.task</field>
     <field name="arch" type="xml">
-      <form string="To-do Task">
+      <form>
         <header>
           <!-- Buttons go here -->
           <button name="do_clear_done" type="object"
