@@ -7,6 +7,8 @@
       <form string="To-do Task">
         <header>
           <!-- Buttons go here -->
+          <button name="do_clear_done" type="object"
+            string="Clear Done"/>
         </header>
         <sheet>
           <!-- Content go here -->
