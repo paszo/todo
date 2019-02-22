@@ -40,4 +40,15 @@
       </tree>
     </field>
   </record>
+
+  <record id="view_filter_todo_task" model="ir.ui.view">
+    <field name="name">To-do Task Filter</field>
+    <field name="model">todo.task</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="user_id"/>
+      </search>
+    </field>
+  </record>
+
 </odoo>
