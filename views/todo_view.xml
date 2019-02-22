@@ -50,6 +50,9 @@
         <filter name="filter_not_done"
                 string="Not Done"
                 domain="[('is_done', '=', False)]"/>
+        <filter name="filter_done"
+                string="Done"
+                domain="[('is_done', '!=', False)]"/>
       </search>
     </field>
   </record>
