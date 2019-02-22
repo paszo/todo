@@ -47,6 +47,9 @@
     <field name="arch" type="xml">
       <search>
         <field name="user_id"/>
+        <filter name="filter_not_done"
+                string="Not Done"
+                domain="[('is_done', '=', False)]"/>
       </search>
     </field>
   </record>
