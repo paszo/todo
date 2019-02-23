@@ -1,3 +1,4 @@
+from odoo.exceptions import AccessError
 from odoo.tests.common import TransactionCase, tagged
 
 @tagged('-at_install', 'post_install')
@@ -21,3 +22,10 @@ class TestTodo(TransactionCase):
         task = Todo.create({'name': 'Test Task'})
         task.do_clear_done()
         self.assertFalse(task.active)
+
+    def test_record_rule(self):
+        "Test per user record rules"
+        Todo = self.env['todo.task']
+        task = Todo.sudo().create({'name': 'Admin Task'})
+        with self.assertRaises(AccessError):
+            Todo.browse([task.id]).name
