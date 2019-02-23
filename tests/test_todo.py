@@ -3,6 +3,12 @@ from odoo.tests.common import TransactionCase, tagged
 @tagged('-at_install', 'post_install')
 class TestTodo(TransactionCase):
 
+    def setUp(self, *args, **kwargs):
+        result = super(TestTodo, self).setUp(*args, **kwargs)
+        user_demo = self.env.ref('base.user_demo')
+        self.env = self.env(user=user_demo)
+        return result
+
     def test_create(self):
         "Create a simple Todo"
         Todo = self.env['todo.task']
